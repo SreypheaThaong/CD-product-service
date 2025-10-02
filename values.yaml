@@ -9,7 +9,7 @@ spring:
   image:
     repository: phea12/spring-homework-image # Jenkins pushes here
     pullPolicy: IfNotPresent
-    tag: "15" # Jenkins updates this
+    tag: "13" # Jenkins updates this
   service:
     type: ClusterIP
     port: 8080
