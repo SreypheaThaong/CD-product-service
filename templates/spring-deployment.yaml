@@ -18,8 +18,19 @@ spec:
         image: "{{ .Values.spring.image.repository }}:{{ .Values.spring.image.tag }}"
         ports:
         - containerPort: {{ .Values.spring.service.port }}
-        envFrom:
-        - configMapRef:
-            name: spring-config
-        - secretRef:
-            name: postgres-secret
+        env:
+        - name: SPRING_DATASOURCE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: spring-config
+              key: spring-url
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: spring-config
+              key: spring-user
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-pass
