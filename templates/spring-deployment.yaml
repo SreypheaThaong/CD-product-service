@@ -17,7 +17,7 @@ spec:
       - name: spring-app
         image: "{{ .Values.spring.image.imageRepository }}:{{ .Values.spring.image.tag }}"
         ports:
-        - containerPort: {{ .Values.spring.port }}
+        - containerPort: {{ .Values.spring.service.port }}
         envFrom:
         - configMapRef:
             name: spring-config
