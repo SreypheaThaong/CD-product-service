@@ -20,7 +20,7 @@ spring:
 # --------------------------
 postgres:
   enabled: true
-  image: postgres:15
+  image: postgres:17
   username: springuser
   password: springpass # stored as Secret in k8s
   database: springdb
