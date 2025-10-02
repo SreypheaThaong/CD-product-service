@@ -39,6 +39,7 @@ spec:
       name: postgres-storage
     spec:
       accessModes: ["ReadWriteOnce"]
+      storageClassName: "do-block-storage"
       resources:
         requests:
           storage: {{ .Values.postgres.storage }}
