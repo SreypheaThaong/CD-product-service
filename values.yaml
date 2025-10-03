@@ -11,7 +11,7 @@ spring:
     pullPolicy: IfNotPresent
     tag: "13" # Jenkins updates this
   service:
-    type: LoadBalancer
+    type: ClusterIP
     port: 9090
   resources: {}
 

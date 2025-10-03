@@ -4,11 +4,10 @@ metadata:
   name: spring-ingress
   namespace: my-namespace
   annotations:
-    kubernetes.io/ingress.class: "nginx"   # Use NGINX ingress controller
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: spring-service.sreyphea.site     # Replace with your domain
+  - host: spring-service.sreyphea.site
     http:
       paths:
       - path: /
